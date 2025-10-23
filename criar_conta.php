@@ -35,8 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ':s' => $hash
             ]);
 
-            // Redireciona para index_autocomplete.php
-            header("Location: index_autocomplete.php");
+            // Redireciona para index.php
+            header("Location: index.php");
             exit;
         }
     }
