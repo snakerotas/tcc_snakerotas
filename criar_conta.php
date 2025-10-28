@@ -204,7 +204,7 @@ body {
     </div>
     <button type="submit" class="btn signup-btn primary">Criar Conta</button>
   </form>
-  <a href="/login" class="secondary-link">Já tem uma conta? Faça login</a>
+  <a href="/snakerotas/logar.html" class="secondary-link">Já tem uma conta? Faça login</a>
 </div>
 </body>
 </html>

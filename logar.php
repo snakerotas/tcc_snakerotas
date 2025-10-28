@@ -30,13 +30,173 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <style>
-    /* Mantém exatamente seu estilo Cobra Coral Premium */
-    <?php include 'style_coral.css'; ?> /* Se você tiver um CSS separado */
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ===================== TEMA COBRA CORAL PREMIUM (Aprimorado) ===================== */
+:root {
+  --preto: #0d0d0d;
+  --cinza: #1a1a1a;
+  --vermelho: #e63946;
+  --vermelho-dark: #a4161a;
+  --amarelo: #ffd166;
+  --amarelo-dark: #f4a261;
+  --texto: #f8f9fa;
+  --texto-sec: #adb5bd;
+  --radius: 14px;
+  --shadow: 0 8px 28px rgba(0, 0, 0, 0.65);
+  --blur-bg: rgba(20, 20, 20, 0.6);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; font-family: 'Poppins', 'Segoe UI', Roboto, sans-serif; }
+
+body {
+  background: linear-gradient(135deg, var(--preto), #121212);
+  color: var(--texto);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+/* ===================== LAYOUT DO FORMULÁRIO DE LOGIN ===================== */
+.login-container {
+  max-width: 450px;
+  width: 100%;
+  padding: 2.5rem;
+  background: var(--blur-bg);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--vermelho-dark);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Faixa da cobra coral */
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px; /* Altura da faixa */
+  background: repeating-linear-gradient(
+    90deg,
+    var(--vermelho),
+    var(--vermelho) 30px,
+    var(--amarelo),
+    var(--amarelo) 40px,
+    var(--preto),
+    var(--preto) 80px
+  );
+  z-index: 10;
+}
+
+.login-container h2 {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--amarelo);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.login-container p {
+  color: var(--texto-sec);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================== FORMULÁRIO ===================== */
+.form-group {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--texto-sec);
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  background: rgba(25, 25, 25, 0.9);
+  color: var(--texto);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: var(--amarelo);
+  box-shadow: 0 0 10px var(--amarelo);
+  outline: none;
+}
+
+/* ===================== BOTÕES E LINKS ===================== */
+.btn.login-btn {
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 1rem;
+  background: linear-gradient(145deg, var(--amarelo), var(--amarelo-dark));
+  color: var(--preto);
+  box-shadow: 0 4px 15px rgba(244, 162, 97, 0.4);
+}
+
+.btn.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(244, 162, 97, 0.6);
+}
+
+.secondary-link {
+  display: block;
+  margin-top: 1.5rem;
+  color: var(--texto-sec);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.secondary-link:hover {
+  color: var(--amarelo);
+}
+
+/* Link de recuperação de senha */
+.forgot-password {
+    text-align: right;
+    margin-top: 0.8rem;
+}
+
+.forgot-password a {
+    font-size: 0.85rem;
+    color: var(--texto-sec);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+    color: var(--amarelo);
+}
+
+/* ===================== RESPONSIVIDADE ===================== */
+@media (max-width: 576px) {
+  .login-container {
+    padding: 2rem 1.5rem;
+  }
+}
+
+    </style>
 </head>
 <body>
   <div class="login-container">
