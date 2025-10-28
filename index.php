@@ -1,9 +1,17 @@
+<?php
+session_start();
+
+$usuarioLogado = isset($_SESSION['usuario_nome']);
+$nomeUsuario = $usuarioLogado ? $_SESSION['usuario_nome'] : null;
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Snake rotas</title>
+  <title>Snake Rotas</title>
 
   <!-- Mantém o mesmo SDK/API TomTom do seu projeto -->
   <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/maps/maps-web.min.js"></script>
@@ -34,6 +42,17 @@
         <button class="btn" id="btnLocate">Minha posição</button>
         <button class="btn" id="btnClear">Limpar</button>
         <button class="btn primary" id="btnRoute">Traçar rota</button>
+
+<!-- NOVO BLOCO: Login / Usuário -->
+      <div class="user-section">
+        <?php if ($usuarioLogado): ?>
+          <span class="username">👋 Olá, <strong><?= htmlspecialchars($nomeUsuario) ?></strong></span>
+          <a href="logout.php" class="btn danger">Sair</a>
+        <?php else: ?>
+          <a href="logar.html" class="btn">Entrar</a>
+          <a href="criar_conta.php" class="btn secondary">Cadastrar</a>
+        <?php endif; ?>
+        
       </div>
     </div>
   </div>

@@ -114,6 +114,10 @@ body {
   color: var(--preto);
 }
 
+a {
+  text-decoration: none !important;
+}
+
 /* ===================== LAYOUT ===================== */
 .layout {
   display: grid;
@@ -207,6 +211,32 @@ body {
   font-weight: 600;
   font-size: .9rem;
 }
+
+
+/* ========== AREA USUARIO =========== */
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-left: 1rem;
+}
+
+.user-section .username {
+  font-size: 0.9rem;
+  color: #eee;
+}
+
+.btn.danger {
+  background: #ff3b6a;
+  color: white;
+}
+
+.btn.secondary {
+  background: #3ab6ff;
+  color: white;
+}
+
+
 
 /* ===================== RESPONSIVO ===================== */
 @media (max-width: 1200px) {
