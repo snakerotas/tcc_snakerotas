@@ -47,9 +47,9 @@ $nomeUsuario = $usuarioLogado ? $_SESSION['usuario_nome'] : null;
       <div class="user-section">
         <?php if ($usuarioLogado): ?>
           <span class="username">👋 Olá, <strong><?= htmlspecialchars($nomeUsuario) ?></strong></span>
-          <a href="logout.php" class="btn danger">Sair</a>
+          <a href="logout.php" class="btn" style="margin-top: 5px;">Sair</a>
         <?php else: ?>
-          <a href="logar.html" class="btn">Entrar</a>
+          <a href="logar.php" class="btn">Entrar</a>
           <a href="criar_conta.php" class="btn secondary">Cadastrar</a>
         <?php endif; ?>
         
